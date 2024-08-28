@@ -1,0 +1,14 @@
+label.error {
+    font-size: 12px !important;
+    font-weight: normal;
+    color: #cd5c5c !important;
+}
+.table td, .table th {
+    padding: 0.25rem;
+}
+.card-footer {
+    padding: .25rem 1.25rem;
+}
+.card-header {
+    padding: .70rem 1.25rem;
+}
