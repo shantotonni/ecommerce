@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DealerController;
+
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -21,6 +23,11 @@ Route::post('/user-menu-permission/store', 'UserManagerController@userMenuPermis
 
 //menu route
 Route::resource('menu-list','MenuController');
+
+Route::get('dealer/{id?}','DealerController@index');
+Route::post('dealer','DealerController@createOrUpdate');
+Route::delete('dealer/delete/{id}', 'DealerController@delete')->name('dealer.delete');
+
 
 Route::get('banner-manage/{id?}','SetupController@bannerManage');
 Route::post('banner-manage','SetupController@bannerAdd');
