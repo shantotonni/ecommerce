@@ -29,7 +29,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="DistrictCode">District</label>
-                    <select class="form-control select2" name="DistrictCode" id="DistrictCode">
+                    <select class="form-control select2" name="DistrictCode" id="DistrictCode" required="">
                         <option value="">Select District</option>
                         @foreach($districts as $district)
                             <option value="{{ $district->DistrictCode }}"
@@ -37,15 +37,13 @@
                                 >{{ $district->DistrictName }}</option>
                         @endforeach
                     </select>
-                    @if($errors->has('District'))
-                        <div class="error">{{ $errors->first('District') }}</div>
-                    @endif
+
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="UpazillaCode">Upazila</label>
-                    <select class="form-control select2" id="UpazillaCode" name="UpazillaCode">
+                    <select class="form-control select2" id="UpazillaCode" name="UpazillaCode" required="">
                         @if(isset($upazilas))
                             @foreach($upazilas as $upazila)
                             <option value="{{ $upazila->UpazillaCode }}"
@@ -63,14 +61,14 @@
                 <div class="form-group">
                     <label for="Latitude">Latitude</label>
                     <input type="text" class="form-control" id="Latitude" name="Latitude" placeholder="Latitude"
-                        value="{{$selectedDealer->Latitude ?? old('Latitude')}}">
+                        value="{{$selectedDealer->Latitude ?? old('Latitude')}}" required="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="Longitude">Longitude</label>
                     <input type="text" class="form-control" id="Longitude" name="Longitude" placeholder="Longitude"
-                        value="{{$selectedDealer->Longitude ?? old('Longitude')}}">
+                        value="{{$selectedDealer->Longitude ?? old('Longitude')}}" required="">
 
                 </div>
             </div>
