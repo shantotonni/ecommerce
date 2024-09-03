@@ -48,7 +48,7 @@
                     <select class="form-control select2" id="UpazillaCode" name="UpazillaCode">
                         @if(isset($upazilas))
                             @foreach($upazilas as $upazila)
-                            <option value="{{ $upazila->DistrictCode }}"
+                            <option value="{{ $upazila->UpazillaCode }}"
                                 {{(isset($selectedDealer->UpazillaCode) && ($selectedDealer->UpazillaCode==$upazila->UpazillaCode) || (old('project')== $district->DistrictCode)) ? 'selected' : ''}}
                                 >{{ $upazila->UpazillaName }}</option>
                             @endforeach
