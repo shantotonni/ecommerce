@@ -28,7 +28,7 @@ class DealerController extends Controller
         if ($id != null) {
             $dealer = Dealer::where('DealerId', $id)
                 ->first();
-            $upazilas = Upazilla::where('DistrictCode', $dealer->DistrictCode)->first();
+            $upazilas = Upazilla::where('DistrictCode', $dealer->DistrictCode)->get();
             $data['selectedDealer'] = $dealer;
             $data['upazilas'] = $upazilas;
 
