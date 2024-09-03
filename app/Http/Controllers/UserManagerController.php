@@ -260,7 +260,7 @@ class UserManagerController extends Controller
     public function districtWiseThana(Request $request){
         $district = explode('-',$request->district);
         $thanas = DB::select(DB::raw("SELECT * FROM vUpazilla where DistrictCode='$district[0]'"));
-        $string = "<option value='' disabled selected>Select Upazila</>";
+        $string = "<option value='' disabled selected>Select Item</>";
         foreach($thanas as $value){
             $string .= "<option value='" . $value->UpazillaCode . "'>" . ucfirst($value->UpazillaName) . "</option>";
         }
