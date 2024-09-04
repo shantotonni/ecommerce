@@ -72,7 +72,26 @@
 
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="ProductGroup">Product Group</label>
+                    <select class="form-control" id="ProductGroup" name="ProductGroup" required="">
+                        <option value="">Select Product Group</option>
+                        <option value="Furniture and Household" <?php echo isset($selectedDealer) && $selectedDealer->ProductGroup === 'Furniture and Household' ? 'selected' : ''; ?>>
+                            Furniture and Household
+                        </option>
+                        <option value="Toys" <?php echo isset($selectedDealer) && $selectedDealer->ProductGroup === 'Toys' ? 'selected' : ''; ?>>
+                            Toys
+                        </option>
+                        <option value="Both" <?php echo isset($selectedDealer) && $selectedDealer->ProductGroup === 'Both' ? 'selected' : ''; ?>>
+                            Both
+                        </option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="Address">Address</label>
                     <input type="text" class="form-control" id="Address" name="Address" placeholder="Address"

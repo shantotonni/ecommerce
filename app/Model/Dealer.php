@@ -25,6 +25,7 @@ class Dealer extends Model
         'Address',
         'Latitude',
         'Longitude',
+        'ProductGroup',
         'CreatedAt',
         'UpdatedAt'
     ];

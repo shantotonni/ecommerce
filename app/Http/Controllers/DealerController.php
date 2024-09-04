@@ -45,14 +45,14 @@ class DealerController extends Controller
         $validated = $request->validate([
             'Name' => 'required|string|max:255',
             'Phone' => 'required|string|max:20',
-            'DistrictCode' => 'nullable|integer',
-            'UpazillaCode' => 'nullable|integer',
+            'DistrictCode' => 'required|integer',
+            'UpazillaCode' => 'required|integer',
             'Address' => 'nullable|string',
-            'Latitude' => 'nullable|string',
-            'Longitude' => 'nullable|string',
+            'Latitude' => 'required|string',
+            'Longitude' => 'required|string',
+            'ProductGroup' => 'required|string',
         ]);
         $id = $request->input('id');
-
         if (!empty($id)) {
             $dealer = Dealer::find($id);
             if ($dealer) {

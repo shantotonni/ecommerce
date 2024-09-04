@@ -32,6 +32,7 @@
                             <th>SL</th>
                             <th>Name</th>
                             <th>Phone</th>
+                            <th>Product Group</th>
                             <th>District</th>
                             <th>Upazila</th>
                             <th>Latitude</th>
@@ -47,6 +48,7 @@
                                     <td>{{$key+1}}</td>
                                     <td>{{$dealer->Name}}</td>
                                     <td>{{$dealer->Phone}}</td>
+                                    <td>{{$dealer->ProductGroup}}</td>
                                     <td>{{ $dealer->district->DistrictName ?? 'N/A' }}</td>
                                     <td>{{ $dealer->upazilla->UpazillaName ?? 'N/A' }}</td>
                                     <td>{{$dealer->Latitude}}</td>
