@@ -9,4 +9,5 @@ class District extends Model
     public $timestamps = false;
     protected $table = 'vDistrict';
     protected $primaryKey = 'DistrictCode';
+    protected $keyType = 'string';
 }
