@@ -17,7 +17,6 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
-
     <section class="content">
         <div class="container-fluid">
             @include('setup.dealer_create')
@@ -49,8 +48,8 @@
                                     <td>{{$dealer->Name}}</td>
                                     <td>{{$dealer->Phone}}</td>
                                     <td>{{$dealer->ProductGroup}}</td>
-                                    <td>{{ $dealer->district->DistrictName ?? 'N/A' }}</td>
-                                    <td>{{ $dealer->upazilla->UpazillaName ?? 'N/A' }}</td>
+                                    <td>{{ $dealer->district ? $dealer->district->DistrictName : 'N/A' }}</td>
+                                    <td>{{ $dealer->upazilla ? $dealer->upazilla->UpazillaName : 'N/A' }}</td>
                                     <td>{{$dealer->Latitude}}</td>
                                     <td>{{$dealer->Longitude}}</td>
                                     <td>{{$dealer->Address}}</td>
@@ -111,6 +110,7 @@
                 data: { district : district }
             }).done(function(data){
                 console.log(data);
+                $("#UpazillaCode").html('');
                 $("#UpazillaCode").html(data);
             });
         });

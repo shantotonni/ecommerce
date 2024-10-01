@@ -34,7 +34,6 @@ class DealerController extends Controller
 
             $data['actionTitle'] = "Update";
         }
-
         $data['dealers'] = Dealer::orderBy('DealerId', 'DESC')->get();
         $data['districts'] = District::all();
         return view('setup/dealer_manage', $data);
@@ -45,8 +44,8 @@ class DealerController extends Controller
         $validated = $request->validate([
             'Name' => 'required|string|max:255',
             'Phone' => 'required|string|max:20',
-            'DistrictCode' => 'required|integer',
-            'UpazillaCode' => 'required|integer',
+            'DistrictCode' => 'required',
+            'UpazillaCode' => 'required',
             'Address' => 'nullable|string',
             'Latitude' => 'required|string',
             'Longitude' => 'required|string',
